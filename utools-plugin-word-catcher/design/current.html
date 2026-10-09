@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>词捕 · 正式界面预览</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 20px;
+        background: #edf0f5;
+        color: #293443;
+        font:
+          12px/1.5 -apple-system,
+          'PingFang SC',
+          'Microsoft YaHei',
+          sans-serif;
+      }
+      .preview-tools {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 1000px;
+        margin: 0 auto 16px;
+        color: #626c7b;
+      }
+      select {
+        font: inherit;
+        color: #293443;
+        border: 1px solid #dce2eb;
+        background: white;
+        border-radius: 6px;
+        padding: 4px 8px;
+      }
+      .preview-tools label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .preview-tools span {
+        margin-left: auto;
+      }
+      .stage {
+        overflow: auto;
+      }
+      iframe {
+        display: block;
+        width: 800px;
+        height: 620px;
+        border: 0;
+        border-radius: 12px;
+        margin: 0 auto;
+        background: #f5f7fa;
+        box-shadow: 0 8px 36px #29344312;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="preview-tools">
+      <label
+        >宽度<select id="previewWidth" aria-label="预览宽度">
+          <option value="800">800</option>
+          <option value="720">720</option>
+          <option value="640">640</option>
+          <option value="480">480</option>
+        </select></label
+      ><label
+        >高度<select id="previewHeight" aria-label="预览高度">
+          <option value="620">620</option>
+          <option value="544">544</option>
+          <option value="480">480</option>
+        </select></label
+      ><span>按当前 uTools 内容区预览 · 演示数据</span>
+    </div>
+    <div class="stage">
+      <iframe id="productionPreview" src="frame.html?view=capture" title="词捕正式界面"></iframe>
+    </div>
+    <script>
+      const frame = document.getElementById('productionPreview')
+      for (const [id, dimension] of [
+        ['previewWidth', 'width'],
+        ['previewHeight', 'height']
+      ])
+        document.getElementById(id).addEventListener('change', e => {
+          frame.style[dimension] = e.target.value + 'px'
+        })
+    </script>
+  </body>
+</html>

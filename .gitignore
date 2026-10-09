@@ -1,0 +1,16 @@
+# 用户词库及明文服务凭证不属于源代码。
+/typewords-data/
+**/config.json
+**/pending-library*.json
+.env
+.env.*
+
+# 开发依赖、构建产物和本机临时文件。
+node_modules/
+dist/
+output/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.tmp-*

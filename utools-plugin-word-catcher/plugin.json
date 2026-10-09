@@ -1,0 +1,25 @@
+{
+  "pluginName": "词捕",
+  "version": "1.0.0",
+  "description": "划词记录生词，AI 生成释义，每日导出 TypeWords 自定义词典",
+  "author": "xiaopengli",
+  "main": "index.html",
+  "preload": "preload.js",
+  "logo": "logo.png",
+  "pluginSetting": {
+    "single": true,
+    "height": 620
+  },
+  "features": [
+    {
+      "code": "capture-keyword",
+      "explain": "记录生词，生成 TypeWords 词条",
+      "cmds": ["记单词", "记生词", "词捕"]
+    },
+    {
+      "code": "capture-text",
+      "explain": "把选中的单词或句子记入生词本",
+      "cmds": [{ "type": "over", "label": "记入生词本" }]
+    }
+  ]
+}

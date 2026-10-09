@@ -1,0 +1,21 @@
+{
+  "name": "utools-word-catcher",
+  "version": "1.0.0",
+  "description": "词捕：uTools 中的 TypeWords 生词本",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node scripts/project.js test",
+    "check": "node scripts/project.js check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "npm run format:check && npm run check && npm test",
+    "build": "node scripts/project.js build",
+    "preview": "node design/serve.js"
+  },
+  "devDependencies": {
+    "prettier": "3.9.9"
+  }
+}
